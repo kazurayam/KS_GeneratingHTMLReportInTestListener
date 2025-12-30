@@ -3,10 +3,13 @@
    <description></description>
    <name>test</name>
    <tag></tag>
-   <UUID>c84650ee-cb5e-4a36-b244-5c4df96b316d</UUID>
+   <UUID>711aac5b-954f-4ee7-ad37-bd2d71770a02</UUID>
+   <freeLicense>true</freeLicense>
    <migratedVersion>5.9.0</migratedVersion>
+   <modifiedEdition>ENTERPRISE</modifiedEdition>
+   <modifiedVersion>10.4.2</modifiedVersion>
    <pageLoadTimeout>0</pageLoadTimeout>
-   <projectFileLocation>/Users/loantran/Downloads/healthcare-tests/test.prj</projectFileLocation>
+   <projectFileLocation>/Users/kazuakiurayama/katalon-workspace/healthcare-tests/test.prj</projectFileLocation>
    <sourceContent>
       <sourceFolderList>
          <sourceFolderConfiguration>
@@ -25,5 +28,6 @@
          </systemFolderConfiguration>
       </systemFolderList>
    </sourceContent>
-   <type>GENERIC</type>
+   <timeStampInProperties>true</timeStampInProperties>
+   <type>WEBUI</type>
 </Project>
