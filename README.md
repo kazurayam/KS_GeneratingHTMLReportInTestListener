@@ -1,7 +1,7 @@
-# Generate HTML Report in TestListener --- yes, we can do it
+# Generating HTML Report in TestListener? --- Yes, you can
 
 This is a small Katalon Studio project for demonstration purpose.
-This project proposes a solution to the problem raised at the topic in the Katalon Communiti:
+This project proposes a solution to the problem raised at the topic in the Katalon Community :
 
 - https://forum.katalon.com/t/manual-generate-html-report/185508
 
@@ -22,7 +22,7 @@ A `@AfterTestSuite`-annotated methid in my Test Listener should invoke the proce
 
 ## Solution Description
 
-I developed a Test Listener `Test Listeners/PurgeHTMLReport.groovy`, which is short as this:
+I developed a Test Listener `Test Listeners/PurgeHTMLReport.groovy`, which is as short as this:
 
 ```
 import java.nio.file.Path
@@ -73,7 +73,10 @@ With this Test Listener implemented, I ran a Test Suite. In the Reports folder, 
 
 The `test-suite-report.html` looked just fine. I found nothing wrong in the new HTML report.
 
+
 ![new html](https://kazurayam.github.io/KS_GeneratingHTMLReportInTestListener/images/new-html-looks-good.png)
+
+I can do any post-processing over the new `test-suite-report.html` in my `@AfterTestSuite`-annotated method in the TestListener `PurgeTestSuiteReport`. I can upload the file to any external locations such as JIRA, GitHub Issues, Slack etc.
 
 ## How I invented this solution.
 
@@ -121,4 +124,9 @@ Every Katalon studio installation contains the source codes of `com.kms.katalon.
     }
 ```
 
-I thought that this method is called by Katalon Studio to generate the HTML report. The method signature was easy to understand. I thought that I would be able to write a `@AfterTestSuite`-annotated method in my Test Listener. So I tried implementing it. It looks just working fine.
+I thought that Katalon Studio calls this method to generate the HTML report. The method signature was easy to understand. I would be able to write a @AfterTestSuite-annotated method in my Test Listener that implement report generation in the similar way.
+
+
+## Conclusion
+
+So I tried implementing it. It looks working fine.
