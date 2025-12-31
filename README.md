@@ -18,7 +18,7 @@ Katalon Studio generates HTML report after the Test Suite is entirely finished; 
 
 ## Solution
 
-A `@AfterTestSuite`-annotated methid in my Test Listener should invoke the processing of generating the HTML report. I would not rely on Katalon Studio to generate it. I will do it myself.
+A `@AfterTestSuite`-annotated method in my Test Listener should invoke the processing of generating the built-in HTML report. I would not rely on Katalon Studio to generate it. I will trigger it myself.
 
 ## Solution Description
 
