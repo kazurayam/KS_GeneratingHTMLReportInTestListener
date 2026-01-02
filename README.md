@@ -171,4 +171,4 @@ I thought that Katalon Studio calls this method to generate the HTML report. The
 
 So I tried implementing it. It looks working fine.
 
-The first [version 1.0]() of this project supported forcibly generating a HTML report. The second [version 2.0] added PDF report.
+The first [version 1.0](https://github.com/kazurayam/KS_GeneratingHTMLReportInTestListener/releases/tag/1.0) of this project supported forcibly generating a HTML report. The second [version 2.0](https://github.com/kazurayam/KS_GeneratingHTMLReportInTestListener/releases/tag/2.0) added PDF report.
