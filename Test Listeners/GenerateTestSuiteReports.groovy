@@ -21,11 +21,11 @@ class GenerateTestSuiteReports {
 	@AfterTestSuite
 	def afterTestSuite(TestSuiteContext testSuiteContext) {
 		// generate test-suite-report.html file
-		Path htmlReport = ReportGenerator.generateHTMLReport("test-suite-report.html")
+		Path htmlReport = ReportGenerator.generateHTMLReport("custom/test-suite-report.html")
 		println "HTML report: " + htmlReport.toString()
 		
 		// generate test-suite-report.pdf file
-		Path pdfReport = ReportGenerator.generatePDFReport("test-suite-report.pdf")
+		Path pdfReport = ReportGenerator.generatePDFReport("custom/test-suite-report.pdf")
 		println "PDF report: " + pdfReport.toString()	
 	}
 	
@@ -48,9 +48,17 @@ class GenerateTestSuiteReports {
 			assert Files.exists(reportFolder)
 		}
 		
+		static void ensureParentDir(Path file) {
+			Path parentDir = file.getParent()
+			if (!Files.exists(parentDir)) {
+				Files.createDirectories(parentDir)
+			}
+		}
+		
 		static Path generateHTMLReport(String htmlFileName) {
 			validateParams()
 			Path htmlReport = reportFolder.resolve(htmlFileName).toAbsolutePath()
+			ensureParentDir(htmlReport)
 			TestSuiteLogRecord testSuiteLogRecord = ReportWriterUtil.parseTestSuiteLog(reportFolder.toString())
 			ReportWriterUtil.writeHTMLReport(
 				SuiteReportGenerationOptionsBuilder.create()
@@ -65,6 +73,7 @@ class GenerateTestSuiteReports {
 		static Path generatePDFReport(String pdfFileName) {
 			validateParams()
 			Path pdfReport = reportFolder.resolve(pdfFileName).toAbsolutePath()
+			ensureParentDir(pdfReport)
 			TestSuiteLogRecord testSuiteLogRecord = ReportWriterUtil.parseTestSuiteLog(reportFolder.toString())
 			TestSuitePdfGenerator pdfGenerator = new TestSuitePdfGenerator(testSuiteLogRecord);
 			try {
