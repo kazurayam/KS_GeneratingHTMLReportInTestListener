@@ -21,21 +21,22 @@ class GenerateTestSuiteReports {
 	@AfterTestSuite
 	def afterTestSuite(TestSuiteContext testSuiteContext) {
 		// generate test-suite-report.html file
-		Path htmlReport = Generator.generateHTMLReport("test-suite-report.html")
+		Path htmlReport = ReportGenerator.generateHTMLReport("test-suite-report.html")
 		println "HTML report: " + htmlReport.toString()
 		
 		// generate test-suite-report.pdf file
-		Path pdfReport = Generator.generatePDFReport("test-suite-report.pdf")
-		println "PDF report: " + pdfReport.toString()
-		
+		Path pdfReport = ReportGenerator.generatePDFReport("test-suite-report.pdf")
+		println "PDF report: " + pdfReport.toString()	
 	}
+	
+	
 	
 	/**
 	 * 
 	 */
-	private class Generator {
+	private class ReportGenerator {
 		
-		private static final KeywordLogger logger = KeywordLogger.getInstance(Generator.class);
+		private static final KeywordLogger logger = KeywordLogger.getInstance(ReportGenerator.class);
 		
 		private static Path projectDir = Paths.get(RunConfiguration.getProjectDir()).toAbsolutePath()
 		private static Path reportFolder = Paths.get(RunConfiguration.getReportFolder()).toAbsolutePath()
