@@ -9,7 +9,7 @@
    <modifiedEdition>ENTERPRISE</modifiedEdition>
    <modifiedVersion>10.4.2</modifiedVersion>
    <pageLoadTimeout>0</pageLoadTimeout>
-   <projectFileLocation>/Users/kazuakiurayama/katalon-workspace/healthcare-tests/test.prj</projectFileLocation>
+   <projectFileLocation>/Users/kazuakiurayama/katalon-workspace/KS_GeneratingHTMLReportInTestListener/test.prj</projectFileLocation>
    <sourceContent>
       <sourceFolderList>
          <sourceFolderConfiguration>
